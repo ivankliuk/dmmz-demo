@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-chroot $CHROOT_PATH
-
 ##########################
 # Run Zookeeper          #
 ##########################
