@@ -18,11 +18,20 @@ cd $CHROOT_PATH
 ```bash
 sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/prepare_chroot.sh
 sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/install_dmmz.sh
-sudo chmod +x prepare_chroot.sh
-sudo chmod +x install_dmmz.sh
+sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/start_dockerd.sh
+sudo chmod +x prepare_chroot.sh install_dmmz.sh start_dockerd.sh
 ```
 
 3) Execute ``prepare.sh`` as follows:
 ```bash
 sudo -E ./prepare_chroot.sh
+```
+
+Services execution
+------------------
+
+1) Initially, start docker daemon. It has to be started outside the chroot'ed
+environment:
+```bash
+sudo -E ./start_dockerd.sh &
 ```
