@@ -15,6 +15,8 @@ mount -o rbind /sys $CHROOT_PATH/sys
 # Copy DNS config
 mkdir $CHROOT_PATH/etc/
 cp /etc/resolv.conf $CHROOT_PATH/etc/resolv.conf
+cp /etc/hosts $CHROOT_PATH/etc/hosts
+cp /etc/hostname $CHROOT_PATH/etc/hostname
 
 # Initialize the RPM database
 mkdir -p $CHROOT_PATH/var/lib/rpm

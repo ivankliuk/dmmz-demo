@@ -19,7 +19,8 @@ cd $CHROOT_PATH
 sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/prepare_chroot.sh
 sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/install_dmmz.sh
 sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/start_dockerd.sh
-sudo chmod +x prepare_chroot.sh install_dmmz.sh start_dockerd.sh
+sudo curl -O https://raw.githubusercontent.com/ivankliuk/dmmz-demo/master/start_zmm.sh
+sudo chmod +x prepare_chroot.sh install_dmmz.sh start_dockerd.sh start_zmm.sh
 ```
 
 3) Execute ``prepare.sh`` as follows:
@@ -34,4 +35,10 @@ Services execution
 environment:
 ```bash
 sudo -E ./start_dockerd.sh &
+```
+
+2) In order to start Zookeeper, Mesos, Marathon run next:
+```bash
+chroot $CHROOT_PATH
+./start_zmm.sh &
 ```
