@@ -39,6 +39,6 @@ sudo -E ./start_dockerd.sh &
 
 2) In order to start Zookeeper, Mesos, Marathon run next:
 ```bash
-chroot $CHROOT_PATH
+sudo chroot $CHROOT_PATH
 ./start_zmm.sh &
 ```
