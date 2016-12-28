@@ -19,7 +19,7 @@ sudo yum install -y inotify-tools
 
 2) Run ``inotifywait`` in background:
 ```bash
-sudo inotifywait -e create,delete,modify,move -mrq / @/opt/nerve @/dev @/sys @/proc @/var @/run > /var/log/inotify.log &
+sudo inotifywait -e create,delete,modify,move -mrq / @/opt/nerve @/dev @/sys @/proc @/var @/run -o /var/log/inotify.log &
 ```
 
 Now all the changes are made in root file system are being reflected in
